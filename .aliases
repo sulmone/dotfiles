@@ -11,8 +11,14 @@ fi
 # List all files colorized in long format
 alias l="ls -lF ${colorflag}"
 
+# List all files colorized in long format, sorted by time
+alias lt="ls -tlF ${colorflag}"
+
 # List all files colorized in long format, excluding . and ..
 alias la="ls -lAF ${colorflag}"
+
+# List all files colorized in long format, excluding . and .., sorted by time
+alias lat="ls -tlAF ${colorflag}"
 
 # List only directories
 alias lsd="ls -lF ${colorflag} | grep --color=never '^d'"
