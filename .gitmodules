@@ -1,3 +1,6 @@
 [submodule "consolas-powerline"]
 	path = consolas-powerline
 	url = git@github.com:Znuff/consolas-powerline.git
+[submodule "alacritty-theme"]
+	path = alacritty-theme
+	url = git@github.com:eendroroy/alacritty-theme.git
