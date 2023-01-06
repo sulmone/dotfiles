@@ -60,8 +60,10 @@ rm -rf $HOME/.vimrc
 link $HOME/.vimrc $DIR/.vimrc
 
 rm -rf $HOME/.alacritty.yml
-link $HOME/.alacritty.yml $DIR/.alacritty.yml
 if windows; then
+    link $HOME/.alacritty.yml $DIR/.alacritty_windows.yml
     rm -rf $APPDATA/alacritty/alacritty.yml
-    link $APPDATA/alacritty/alacritty.yml $DIR/.alacritty.yml
+    link $APPDATA/alacritty/alacritty.yml $DIR/.alacritty_windows.yml
+else
+    link $HOME/.alacritty.yml $DIR/.alacritty.yml
 fi
