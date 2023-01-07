@@ -4,3 +4,6 @@
 [submodule "alacritty-theme"]
 	path = alacritty-theme
 	url = git@github.com:eendroroy/alacritty-theme.git
+[submodule "ohmyzsh"]
+	path = ohmyzsh
+	url = https://github.com/ohmyzsh/ohmyzsh.git
