@@ -1,5 +1,6 @@
 alacritty
 autofetch
+behaviour
 buttonless
 dotfiles
 easymotion
@@ -8,11 +9,18 @@ hlsearch
 incsearch
 ipfs
 ipns
+Keypair
+libp
 Menlo
+Multiaddr
+Muxer
+muxing
 Numpad
+quic
 scancode
 Scancodes
 scrollback
 showkey
+staticlib
 terminfo
 vttest
