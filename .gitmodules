@@ -10,3 +10,6 @@
 [submodule "/home/diana/dotfiles/.vim/pack/plugins/start/vim-tmux-navigator"]
 	path = /home/diana/dotfiles/.vim/pack/plugins/start/vim-tmux-navigator
 	url = git@github.com:christoomey/vim-tmux-navigator.git
+[submodule "/home/diana/dotfiles/.vim/pack/plugins/start/vim-commentary"]
+	path = /home/diana/dotfiles/.vim/pack/plugins/start/vim-commentary
+	url = git@github.com:tpope/vim-commentary.git

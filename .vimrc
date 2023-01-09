@@ -4,9 +4,7 @@ set nocompatible
 " automatically load changed files
 set autoread
 
-" auto-reload vimrc
-autocmd! bufwritepost vimrc source ~/.vim/vimrc
-"autocmd! bufwritepost gvimrc source ~/.vim/gvimrc
+let mapleader = ","
 
 " show the filename in the window titlebar
 set title
@@ -31,8 +29,8 @@ set number
 set cursorline
 
 " wrapping stuff
-set textwidth=80
-set colorcolumn=80
+set textwidth=100
+set colorcolumn=100
 
 " ignore whitespace in diff mode
 set diffopt+=iwhite
@@ -69,10 +67,12 @@ set wildignorecase
 """""""""""""
 
 set hlsearch "when there is a previous search pattern, highlight all its matches
-set incsearch "while typing a search command, show immediately where the so far typed pattern matches
+set incsearch "while typing a search command, show immediately where the typed pattern matches
 set ignorecase "ignore case in search patterns
 set smartcase "override the 'ignorecase' option if the search pattern contains uppercase characters
 set gdefault "imply global for new searches
+
+map <leader><space> :let @/=''<cr> " clear search
 
 """""""""""""
 " Indenting "
@@ -130,3 +130,8 @@ au BufRead,BufNewFile *.html.erb set ft=eruby
 
 " Add json syntax highlighting
 au BufNewFile,BufRead *.json set ft=json syntax=javascript
+
+""""""""""""""""""""""
+" Keyboard Shortcuts "
+""""""""""""""""""""""
+
