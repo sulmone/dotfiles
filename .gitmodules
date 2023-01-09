@@ -19,3 +19,6 @@
 [submodule "/home/diana/dotfiles/.vim/pack/plugins/start/vim-repeat"]
 	path = /home/diana/dotfiles/.vim/pack/plugins/start/vim-repeat
 	url = git@github.com:tpope/vim-repeat.git
+[submodule "/home/diana/dotfiles/.vim/pack/plugins/start/vim-speeddating"]
+	path = /home/diana/dotfiles/.vim/pack/plugins/start/vim-speeddating
+	url = git@github.com:tpope/vim-speeddating.git
