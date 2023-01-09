@@ -13,3 +13,9 @@
 [submodule "/home/diana/dotfiles/.vim/pack/plugins/start/vim-commentary"]
 	path = /home/diana/dotfiles/.vim/pack/plugins/start/vim-commentary
 	url = git@github.com:tpope/vim-commentary.git
+[submodule "/home/diana/dotfiles/.vim/pack/plugins/start/vim-surround"]
+	path = /home/diana/dotfiles/.vim/pack/plugins/start/vim-surround
+	url = git@github.com:tpope/vim-surround.git
+[submodule "/home/diana/dotfiles/.vim/pack/plugins/start/vim-repeat"]
+	path = /home/diana/dotfiles/.vim/pack/plugins/start/vim-repeat
+	url = git@github.com:tpope/vim-repeat.git
