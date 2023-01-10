@@ -11,6 +11,11 @@ fi
 
 source $HOME/dotfiles/.aliases
 
+# The plugin will auto execute this zvm_after_init function
+function zvm_after_init() {
+    bindkey '^E' autosuggest-execute
+}
+
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/dotfiles/ohmyzsh"
 
