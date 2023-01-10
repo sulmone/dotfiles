@@ -6,7 +6,7 @@
 	url = git@github.com:eendroroy/alacritty-theme.git
 [submodule "ohmyzsh"]
 	path = ohmyzsh
-	url = https://github.com/ohmyzsh/ohmyzsh.git
+	url = git@github.com:sulmone/ohmyzsh.git
 [submodule ".vim/pack/plugins/start/vim-tmux-navigator"]
 	path = .vim/pack/plugins/start/vim-tmux-navigator
 	url = git@github.com:christoomey/vim-tmux-navigator.git
