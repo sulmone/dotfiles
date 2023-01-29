@@ -60,6 +60,8 @@ rm -rf $HOME/.vimrc
 link $HOME/.vimrc $DIR/.vimrc
 rm -rf $HOME/.tmux.conf
 link $HOME/.tmux.conf $DIR/.tmux.conf
+rm -rf $HOME/.bazelrc
+link $HOME/.bazelrc $DIR/.bazelrc
 
 rm -rf $HOME/.alacritty.yml
 if windows; then
