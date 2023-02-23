@@ -5,7 +5,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
+if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM_PROGRAM" =~ vscode ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
   exec tmux new-session -A -s main
 fi
 
@@ -119,4 +119,29 @@ source $ZSH/oh-my-zsh.sh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/dotfiles/.p10k.zsh ]] || source ~/dotfiles/.p10k.zsh
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/dsulmone/mambaforge/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/dsulmone/mambaforge/etc/profile.d/conda.sh" ]; then
+        . "/home/dsulmone/mambaforge/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/dsulmone/mambaforge/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+
+if [ -f "/home/dsulmone/mambaforge/etc/profile.d/mamba.sh" ]; then
+    . "/home/dsulmone/mambaforge/etc/profile.d/mamba.sh"
+fi
+# <<< conda initialize <<<
+
+export PATH="/usr/local/clang-15.0.4/bin:/usr/local/gcc-12.2.0/bin:/usr/local/omc/bin:$PATH"
+export LD_LIBRARY_PATH="/usr/local/boost-1.68.0/lib:$LD_LIBRARY_PATH"
+
+#source ~/code/omcmono/.venv/bin/activate
+#source $HOME/.cargo/env
 
