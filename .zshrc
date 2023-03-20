@@ -5,11 +5,12 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM_PROGRAM" =~ vscode ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
-  exec tmux new-session -A -s main
-fi
+# if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM_PROGRAM" =~ vscode ]] && [[ ! "$DISABLE_TMUX" ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
+#   exec tmux new-session -A -s main
+# fi
 
 source $HOME/dotfiles/.aliases
+source $HOME/prism-aliases.sh
 
 # The plugin will auto execute this zvm_after_init function
 function zvm_after_init() {
@@ -144,4 +145,16 @@ export LD_LIBRARY_PATH="/usr/local/boost-1.68.0/lib:$LD_LIBRARY_PATH"
 
 #source ~/code/omcmono/.venv/bin/activate
 #source $HOME/.cargo/env
+
+export PATH=/home/dsulmone/bin:/home/dsulmone/.local/go/bin:$PATH
+export DOCKER_HOST=unix:///run/user/1000/docker.sock
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+if [ "$HOSTNAME" = "ch-dsulmone2" ]; then
+    export CC=/usr/local/gcc-12.2.0/bin/gcc
+    export CXX=/usr/local/gcc-12.2.0/bin/g++
+fi
 
