@@ -141,7 +141,7 @@ fi
 # <<< conda initialize <<<
 
 export PATH="/usr/local/clang-15.0.4/bin:/usr/local/gcc-12.2.0/bin:/usr/local/omc/bin:$PATH"
-export LD_LIBRARY_PATH="/usr/local/boost-1.68.0/lib:$LD_LIBRARY_PATH"
+#export LD_LIBRARY_PATH="/usr/local/boost-1.68.0/lib:$LD_LIBRARY_PATH"
 
 #source ~/code/omcmono/.venv/bin/activate
 #source $HOME/.cargo/env
@@ -156,5 +156,29 @@ export NVM_DIR="$HOME/.nvm"
 if [ "$HOSTNAME" = "ch-dsulmone2" ]; then
     export CC=/usr/local/gcc-12.2.0/bin/gcc
     export CXX=/usr/local/gcc-12.2.0/bin/g++
+fi
+
+if [[ -z ${SSH_CONNECTION+x} ]]; then
+env=~/.ssh/agent.env
+
+agent_load_env () { test -f "$env" && . "$env" >| /dev/null ; }
+
+agent_start () {
+    (umask 077; ssh-agent >| "$env")
+    . "$env" >| /dev/null ; }
+
+agent_load_env
+
+# agent_run_state: 0=agent running w/ key; 1=agent w/o key; 2=agent not running
+agent_run_state=$(ssh-add -l >| /dev/null 2>&1; echo $?)
+
+if [ ! "$SSH_AUTH_SOCK" ] || [ $agent_run_state = 2 ]; then
+    agent_start
+    ssh-add
+elif [ "$SSH_AUTH_SOCK" ] && [ $agent_run_state = 1 ]; then
+    ssh-add
+fi
+
+unset env
 fi
 
